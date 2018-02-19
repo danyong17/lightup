@@ -1,0 +1,131 @@
+.navigation-container {
+	padding:10px 0;
+	border-bottom: 2px solid #4E5B51;
+	font-family:'The Light Font', sans-serif;
+	.col-8 {
+		position:relative;
+		.menu-main-menu-container {
+			position: relative;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			.menu {
+				text-align:center;
+				padding:0;
+				list-style: none;
+				li {
+					display:inline-block;
+					margin:0 20px;
+					&:first-of-type {
+						margin-left:0;
+					}
+					a {
+						color:#000;
+						text-decoration:none;
+						position:relative;
+						&:after {
+							content:'';
+							position:absolute; bottom:-7px;
+							left:0;
+							width:0;
+							height:2px;
+							background-color:#4e5b51;
+							-webkit-transition: all 0.3s ease-in-out;
+							-moz-transition: all 0.3s ease-in-out;
+							-o-transition: all 0.3s ease-in-out;
+							-ms-transition: all 0.3s ease-in-out;
+							transition: all 0.3s ease-in-out;
+						}
+						&:hover {
+							&:after {
+							width:100%;
+								-webkit-transition: all 0.3s ease-in-out;
+								-moz-transition: all 0.3s ease-in-out;
+								-o-transition: all 0.3s ease-in-out;
+								-ms-transition: all 0.3s ease-in-out;
+								transition: all 0.3s ease-in-out;
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+}
+.banner {
+	position:relative;
+	.overlay {
+		position:absolute;
+		left:0;
+		right:0;
+		bottom:0;
+		top:0;
+		z-index:1;
+		background: -moz-linear-gradient(top, rgba(78,91,81,0.3) 0%, rgba(25,29,26,0) 68%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(78,91,81,0.3) 0%,rgba(25,29,26,0) 68%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(78,91,81,0.3) 0%,rgba(25,29,26,0) 68%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#804e5b51', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	}
+	.tagline {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		right: 0;
+		width: 42%;
+		margin: auto;
+		z-index: 1;
+		color: #fff;
+		text-align: center;
+		z-index:2;
+	    letter-spacing: 6px;
+	    font-size: 36px;
+	    font-weight:bold;
+	}
+	.btn-container {
+		position:absolute;
+		bottom:120px;
+		text-align:center;
+		left:0;
+		right:0;
+		display:block;
+		width:100%;
+		z-index:2;
+		.btn-l {
+		    text-decoration: none;
+		    margin: 0 20px;
+		    background-color: #fff;
+		    padding: 13px 30px;
+		    color: #000;
+		    letter-spacing: 1px;
+			&:hover {
+				background-color:#4e5b51;
+				color:#fff;
+			}
+		}
+		.btn-r {
+			text-decoration: none;
+			margin: 0 20px;
+			background-color: rgba(51,51,51,.65);
+			padding: 13px 42px;
+			color: #fff;
+			letter-spacing: 1px;
+			&:hover {
+				/*background-color:#fec20e;*/
+				background-color:#e7ba1f;
+			}
+		}
+	}
+	&:before {
+		content:"";
+		position:absolute;
+		z-index:2;
+		bottom:0;
+		left:0;
+		width: 0;
+		height: 0;
+		border-left: 49.466vw solid transparent;
+		border-right: 49.466vw solid transparent;
+		border-bottom: 70px solid #000;
+	}
+}

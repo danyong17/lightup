@@ -1,5 +1,5 @@
 <footer class="content-info">
   <div class="container">
-    <?php dynamic_sidebar('sidebar-footer'); ?>
+    Copyright <?php echo get_bloginfo( 'name' ); ?> 2018.
   </div>
 </footer>
