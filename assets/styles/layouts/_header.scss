@@ -1,7 +1,9 @@
 .navigation-container {
 	padding:10px 0;
-	border-bottom: 2px solid #4E5B51;
+	border-bottom: 1px solid #0c8341;
 	font-family:'The Light Font', sans-serif;
+    position: relative;
+    z-index: 3;
 	.col-8 {
 		position:relative;
 		.menu-main-menu-container {
@@ -14,6 +16,7 @@
 				text-align:center;
 				padding:0;
 				list-style: none;
+				margin-bottom:0;
 				li {
 					display:inline-block;
 					margin:0 20px;
@@ -24,6 +27,7 @@
 						color:#000;
 						text-decoration:none;
 						position:relative;
+						font-size:14px;
 						&:after {
 							content:'';
 							position:absolute; bottom:-7px;
@@ -112,7 +116,7 @@
 			letter-spacing: 1px;
 			&:hover {
 				/*background-color:#fec20e;*/
-				background-color:#e7ba1f;
+				background-color:#0c8341;
 			}
 		}
 	}
@@ -127,5 +131,18 @@
 		border-left: 49.466vw solid transparent;
 		border-right: 49.466vw solid transparent;
 		border-bottom: 70px solid #000;
+	}
+}
+.logo-url {
+    position: absolute;
+    top:-10px;
+    padding: 14px 25px;
+    background-color: #0c8341;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	img {
+		width:100px;
 	}
 }
