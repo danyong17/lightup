@@ -38,6 +38,19 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    // About us page, note the change from about-us to about_us.
+    'page_template_template_residential_php': {
+      init: function() {
+        var swiper = new Swiper('.swiper-container', {
+          direction: 'vertical',
+          slidesPerView: 1,
+          slidesPerColumn:1,
+          slidesPerColumnFill:'row',
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev'
+        });
+      }
     }
   };
 

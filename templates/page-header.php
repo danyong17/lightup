@@ -19,10 +19,10 @@ if ( has_post_thumbnail() ) {
 }
 ?>
 <div class="page-header" style="background-image:url(<?php echo $img_url; ?>);background-size:cover;">
-    <div class="title">
+    <!-- <div class="title">
         <h1>
-            <?php echo get_the_title(); ?>
+            <?php //echo get_the_title(); ?>
         </h1>
-    </div>
+    </div> -->
 </div>
 </header>
