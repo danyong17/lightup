@@ -6,3 +6,70 @@ footer.content-info {
     padding: 50px 0;
     text-transform: uppercase;
 }
+.free-quote-section {
+    background-color:#efefef;
+    position: relative;
+    padding-top:50px;
+    padding-bottom:50px;
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        top: -70px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 49.466vw solid transparent;
+        border-right: 49.466vw solid transparent;
+        border-bottom: 70px solid #efefef;
+    }
+    .desc {
+        text-align:center;
+        color:#343434;
+    }
+    .wpcf7 {
+        margin-top:30px;
+        .first {
+            margin-bottom:30px;
+        }
+        .second {
+            margin-bottom:40px;
+        }
+        .form-control {
+            padding:15px;
+            border-radius:0;
+            outline:#0c8341;
+            &:focus {
+                border-color:#0c8341;
+            }
+        }
+        div.wpcf7-validation-errors {
+            text-align:center;
+        }
+    }
+    p {
+        text-align:center;
+    }
+    .wpcf7-submit {
+        background-color: #0c8341;
+        border: 1px solid #0c8341;
+        color: #fff;
+        padding: 12px 40px 12px;
+        height: 46px;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            opacity:.9;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            -ms-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}

@@ -6,7 +6,7 @@
 				<a href="<?php echo get_site_url(); ?>" class="logo-url"><img src="<?php echo get_field('logo','option'); ?>" class="img-fluid" alt=""></a>
 			</div>
 			<div class="col-8">
-				<?php wp_nav_menu( array('Main Menu') ); ?>
+				<?php wp_nav_menu( array('menu'=>'Main Menu') ); ?>
 			</div>
 		</div>
 	</div>

@@ -52,6 +52,13 @@
 							}
 						}
 					}
+					&.current_page_item {
+						a {
+							&:after {
+								width:100%;
+							}
+						}
+					}
 				}	
 			}
 		}
@@ -186,6 +193,9 @@
 .business-header {
 	padding-top:80px;
 	padding-bottom:120px;
+	background-position:center;
+	background-repeat:no-repeat;
+	min-height:450px;
 	h1 {
 		width: 42%;
 		margin: auto;
@@ -196,7 +206,7 @@
 		font-weight: 700;
 		font-family: Proxima Nova,sans-serif;
 		text-align:center;
-		margin-bottom:350px;
+		margin-bottom:300px;
 	}
 	.btn-container {
 		text-align:center;
