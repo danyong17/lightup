@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: FAQ
+ * Template Name: Get Started
  */
 ?>
 

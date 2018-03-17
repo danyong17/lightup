@@ -97,7 +97,7 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato */@font-face {
+@font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-Light.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -109,7 +109,7 @@
     text-rendering: optimizeLegibility;
 }
 
-/* Webfont: Lato */@font-face {
+@font-face {
     font-family: 'Lato';
     src: url('../fonts/Lato-LightItalic.eot'); /* IE9 Compat Modes */
     src: url('../fonts/Lato-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -142,6 +142,18 @@
     text-rendering: optimizeLegibility;
 }
 
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/proxima_nova_thin.eot');
+    src: url('../fonts/proxima_nova_thin.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proxima_nova_thin.woff2') format('woff2'),
+         url('../fonts/proxima_nova_thin.woff') format('woff'),
+         url('../fonts/proxima_nova_thin.ttf') format('truetype'),
+         url('../fonts/proxima_nova_thin.svg#Proxima Nova') format('svg');
+    font-weight: 100;
+    font-style: normal;
+
+}
 
 body {
     font-family: 'Lato';

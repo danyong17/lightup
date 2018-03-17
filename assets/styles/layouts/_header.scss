@@ -1,7 +1,9 @@
 .navigation-container {
 	padding:10px 0;
 	border-bottom: 1px solid #0c8341;
-	font-family:'The Light Font', sans-serif;
+	// font-family:'The Light Font', sans-serif;
+	font-family:'Proxima Nova', sans-serif;
+	font-weight:100;
     position: relative;
     z-index: 3;
 	.col-8 {
@@ -27,7 +29,7 @@
 						color:#000;
 						text-decoration:none;
 						position:relative;
-						font-size:14px;
+						font-size:13px;
 						&:after {
 							content:'';
 							position:absolute; bottom:-7px;
@@ -143,16 +145,13 @@
 }
 .logo-url {
     position: absolute;
-    top:-10px;
+    top:-20px;
     padding: 14px 25px;
     background-color: #0c8341;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
-	img {
-		width:100px;
-	}
 }
 .page-header {
 	background-position:center;

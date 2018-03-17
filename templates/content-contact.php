@@ -39,7 +39,7 @@
                     </div>
                 <?php } ?>
                 <div class="social-media">
-                    Social Media:
+                    Visit us on :
                     <?php wp_nav_menu( array('menu' => 'Social Media') ); ?>
                 </div>
             </div>

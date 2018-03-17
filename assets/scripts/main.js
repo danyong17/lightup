@@ -51,6 +51,18 @@
           prevButton: '.swiper-button-prev'
         });
       }
+    },
+    'page_template_template_testimonial_php': {
+      init: function() {
+        var swiper = new Swiper('.slide-container', {
+          loop: true,
+          slidesPerView: 1,
+          slidesPerColumn:1,
+          slidesPerColumnFill:'row',
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev'
+        });
+      }
     }
   };
 

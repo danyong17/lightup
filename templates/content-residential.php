@@ -120,117 +120,33 @@
 				</div>
 			</div>
 			<div class="body-area">
+			<?php if(get_field('payment_option')) { ?>
 				<div class="row">
-				<div class="col-sm-4">
-						<div class="label">
-							Down payment
+					<?php foreach(get_field('payment_option') as $po) { ?>
+						<div class="col-sm-4">
+							<div class="label">
+								<?php echo $po['label']; ?>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>50% down</span>
+						<div class="col-sm-4">
+							<div class="insert">
+								<span><?php echo $po['loan']; ?></span>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>50% down</span>
+						<div class="col-sm-4">
+							<div class="insert">
+								<span><?php echo $po['cash']; ?></span>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Ownership
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>You</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>You</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Monthly payments
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Fixed</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>None</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Production guarantee
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Online Energy monitoring
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Roof &amp; system warranty
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>Yes</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="label">
-							Payment term
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>6 months installment</span>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="insert">
-							<span>25% of price after delivey of materials. 25% of price after activation of system.</span>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
+		<?php if(get_field('po_button_label')) { ?>
 		<div class="btn-area">
-			<a href="/get-started" class="btn-g">Get Started</a>
+			<a href="get_field('po_button_link')" class="btn-g"><?php echo get_field('po_button_label'); ?></a>
 		</div>
+		<?php } ?>
 	</div>
 </div>
