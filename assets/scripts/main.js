@@ -63,6 +63,54 @@
           prevButton: '.swiper-button-prev'
         });
       }
+    },
+    'page_template_template_packages_php': {
+      init: function() {
+        var swiper = new Swiper('.package-container', {
+          slidesPerView: 1,
+          slidesPerColumn:1,
+          speed:800,
+          paginationClickable:true,
+          slidesPerColumnFill:'row',
+          spaceBetween: 30,
+          pagination: '.swiper-pagination',
+          nextButton: '.swiper-button-next',
+          prevButton: '.swiper-button-prev',
+          paginationBulletRender: function (swiper, index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+          }
+        });
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+          if ( '332' === event.detail.contactFormId ) {
+            var curkwh = $('#curkwh').val();
+            var curbill = $('#billkwh').val();
+            var avekwh = $('#avekwh').val();
+            var pageID = $('#pageID').val();
+            $.ajax({
+              url : ajaxurl,
+              type : 'post',
+              // dataType : 'html',
+              data : {
+                action : 'post_find_package',
+                avekwh : avekwh,
+                pageID : pageID
+              },
+              beforeSend : function() {
+                $('.calculation-section .calculate .overlay').fadeIn();
+              },
+              success : function( response ) {
+                // alert(data);
+                $('.calculation-section .calculate .overlay').fadeOut();
+                $('#package_result').html(response);
+                $('html, body').animate({
+                  scrollTop: $("#package_result").offset().top - 100
+                }, 800);
+              }
+            });
+          }
+        }, false );
+
+      }
     }
   };
 

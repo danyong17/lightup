@@ -1,35 +1,57 @@
 <?php
+// namespace Roots\Sage\Custom;
+// use Roots\Sage\Assets;
 
-namespace Roots\Sage\Custom;
+add_action( 'wp_ajax_nopriv_post_find_package', 'post_find_package' );
+add_action( 'wp_ajax_post_find_package', 'post_find_package' );
 
-use Roots\Sage\Assets;
+function post_find_package() {
+	$avekwh = $_POST['avekwh'];
+	$pageID = $_POST['pageID'];
+	$toCeil = (($avekwh / 30) / 12);
+	$aveCeil = ceiling($toCeil,0.5);
+	
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) { ?>
+		<?php $packs = get_field('packages',$pageID) ?>
+		<?php $usePack = array(); ?>
+		<?php foreach($packs as $pack) { ?>
+			<?php $usePack[] = $pack['watts_value']; ?>
+		<?php } ?>
+		<?php $closer = getClosest($aveCeil,$usePack); ?>
+		<?php foreach($packs as $pack) {  ?>
+			<?php if($closer == $pack['watts_value'] ) { ?>
+				<div class="right-pack-container">
+					<div class="title">
+						<?php if(get_field('right_package_title',$pageID)) ?>
+						<h4><?php echo get_field('right_package_title',$pageID); ?></h4>
+					</div>
+					<ul>
+						<li class="w"><?php echo $pack['watts']; ?></li>
+						<li class="p"><?php echo $pack['price']; ?></li>
+						<li class="es">Estimated Monthly Savings: <?php echo $pack['estimated_savings']; ?></li>
+						<li class="d"><?php echo $pack['description']; ?></li>
+					</ul>
+				</div>
+			<?php } ?>
+		<?php } ?>
+	<?php }
+	die();
+}
 
-if( function_exists('acf_add_options_page') ) {
- 
-	$option_page = acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title' 	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability' 	=> 'edit_posts',
-		'redirect' 	=> false
-	));
+function getClosest($search, $arr) {
+	$closest = null;
+	foreach ($arr as $item) {
+	   if ($closest === null || abs($search - $closest) > abs($item - $search)) {
+		  $closest = $item;
+	   }
+	}
+	return $closest;
+ }
 
-	$option_page = acf_add_options_page(array(
-		'page_title' 	=> 'Header Settings',
-		'menu_title' 	=> 'Header Settings',
-		'menu_slug' 	=> 'theme-header-settings',
-		'parent_slug'	=> 'theme-general-settings',
-		'capability' 	=> 'edit_posts',
-		'redirect' 	=> false
-	));
-
-	$option_page = acf_add_options_page(array(
-		'page_title' 	=> 'Footer Settings',
-		'menu_title' 	=> 'Footer Settings',
-		'menu_slug' 	=> 'theme-footer-settings',
-		'parent_slug'	=> 'theme-general-settings',
-		'capability' 	=> 'edit_posts',
-		'redirect' 	=> false
-	));
- 
+ if( !function_exists('ceiling') )
+{
+    function ceiling($number, $significance = 1)
+    {
+        return ( is_numeric($number) && is_numeric($significance) ) ? (ceil($number/$significance)*$significance) : false;
+    }
 }
